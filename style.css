@@ -27,18 +27,18 @@ body{
 		}
 
 		#buttonContainer{
-			width: 350px;
+			width: 380px;
 			margin: 0 auto;
 			position: relative;
 			top: 10px;
-			bottom: 0;
+			bottom: 5;
 		}
 
 		.toggleButton{
 			float: left;
 			border: none;
 			padding: 13px;
-			font-size: 100%;
+			font-size: 105%;
 			cursor: pointer;
 			background-color: #424242;
 			color: white;
@@ -75,6 +75,22 @@ body{
 
 		.highlightedButton{
 			background-color: grey;
+		}
+
+		#imgdwn{
+			width:15%; 
+            height:15%;
+            position: relative;
+            right: -200px;
+            margin-top: 2px;
+            cursor: pointer;
+		}
+		#imgdwn:hover{
+			border: 2px orange solid;
+			border-bottom-right-radius: 8px;
+			border-bottom-left-radius: 8px;
+			border-top-right-radius: 8px;
+			border-top-left-radius: 8px;
 		}
 
 		textarea{

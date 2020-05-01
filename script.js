@@ -26,23 +26,52 @@ function updateOutput() {
 	$(".panel").width(($(window).width()/2)-10);
 
 	updateOutput();
-
+""+
 	$("textarea").on('change keyup paste', function(){
 		updateOutput();
 	});
 
+	function download(){
+		var text = "<html>\n"+"<head>\n"+"<link rel='stylesheet' type='text/css' href='style.css'>"+"\n</head>\n\n<body>\n\n"+document.getElementById("htmlPanel").value+"\n\n<script type='text/javascript' src='script.js'></script>"+"\n</body>\n</html>";
+	    text = text.replace(/\n/g, "\r\n"); // To retain the Line breaks.
+	    var blob = new Blob([text], { type: "text/plain"});
+	    var anchor = document.createElement("a");
+	    anchor.download = "index.html";
+	    anchor.href = window.URL.createObjectURL(blob);
+	    anchor.target ="_blank";
+	    anchor.style.display = "none"; // just to be safe!
+	    document.body.appendChild(anchor);
+	    anchor.click();
+	    document.body.removeChild(anchor);
+
+	    var text1 = document.getElementById("cssPanel").value;
+	    text1 = text1.replace(/\n/g, "\r\n"); // To retain the Line breaks.
+	    var blob1 = new Blob([text1], { type: "text/css"});
+	    var anchor1 = document.createElement("a");
+	    anchor1.download = "style.css";
+	    anchor1.href = window.URL.createObjectURL(blob1);
+	    anchor1.target ="_blank";
+	    anchor1.style.display = "none"; // just to be safe!
+	    document.body.appendChild(anchor1);
+	    anchor1.click();
+	    document.body.removeChild(anchor1);
+
+	    var text2 = document.getElementById("javascriptPanel").value;
+	    text2 = text2.replace(/\n/g, "\r\n"); // To retain the Line breaks.
+	    var blob2 = new Blob([text2], { type: "text/javascript"});
+	    var anchor2 = document.createElement("a");
+	    anchor2.download = "script.js";
+	    anchor2.href = window.URL.createObjectURL(blob2);
+	    anchor2.target ="_blank";
+	    anchor2.style.display = "none"; // just to be safe!
+	    document.body.appendChild(anchor2);
+	    anchor2.click();
+	    document.body.removeChild(anchor2);
+	}
+	
+
 /*	function download(){
-    var text = document.getElementById("htmlPanel").value;
-    text = text.replace(/\n/g, "\r\n"); // To retain the Line breaks.
-    var blob = new Blob([text], { type: "text/plain"});
-    var anchor = document.createElement("a");
-    anchor.download = "my-filename.txt";
-    anchor.href = window.URL.createObjectURL(blob);
-    anchor.target ="_blank";
-    anchor.style.display = "none"; // just to be safe!
-    document.body.appendChild(anchor);
-    anchor.click();
-    document.body.removeChild(anchor);
+    
  }
 
  function saveTextAsFile(textToWrite, fileNameToSaveAs)

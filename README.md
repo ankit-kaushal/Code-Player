@@ -2,4 +2,5 @@
 
 Online HTML, CSS and JavaScript code editor.
 
-Demo : https://ankitkaushal.me/Code-Player/
+
+Demo : <a href="https://ankit-kaushal.github.io/Code-Player/">Click Here!</a>
